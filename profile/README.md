@@ -51,21 +51,6 @@ En banca, energía y minería no basta con que un proyecto funcione: tiene que s
 
 **Industrias:** Banca · Energía · Minería · Retail · Telecomunicaciones · Gobierno
 
----
-
-## Estándares para el equipo
-
-Recursos internos de referencia (acceso restringido a miembros del org):
-
-- **[AI Guidelines](https://github.com/FACTORIT-INGENIERIA/AI-Guidelines)** — Lineamientos de uso de IA en desarrollo
-- **[Design System](https://github.com/FACTORIT-INGENIERIA/design-system)** — Sistema de diseño compartido
-- **[Welcome / Onboarding](https://github.com/FACTORIT-INGENIERIA/welcome)** — Recursos y guía de incorporación para devs
-- **[AI Team HQ](https://github.com/FACTORIT-INGENIERIA/ai-team-hq)** — Gestión de iniciativas del AI Team
-
-> Los enlaces a repositorios privados solo son accesibles para miembros con permiso.
-
----
-
 ## Sobre este GitHub
 
 La mayoría de nuestros repositorios son **privados**, en línea con nuestra política de seguridad de la información (ISO 27001). El código productivo de clientes no se expone públicamente.
