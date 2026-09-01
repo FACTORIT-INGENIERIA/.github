@@ -1,0 +1,108 @@
+# Formulario de defecto. Va en `.github/ISSUE_TEMPLATE/bug.yml`.
+#
+# El `title` viene pre-poblado con el prefijo de conventional commit para que el issue
+# nazca alineado con la rama y el PR que lo van a cerrar: quien lo abre completa el
+# scope y la descripción, y de ahí sale `fix/<scope>-<descripcion>` sin traducir nada.
+#
+# `bug` es una etiqueta que la plataforma trae por defecto: no hace falta crearla.
+
+name: Defecto
+description: Reportar un comportamiento incorrecto o inconsistente
+title: "fix(scope): "
+labels: ["bug"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Completa los campos que puedas. Un defecto con pasos de reproducción concretos
+        se puede tomar y delegar; uno sin ellos vuelve como pregunta y pierde una vuelta.
+
+  - type: textarea
+    id: descripcion
+    attributes:
+      label: Descripción
+      description: Qué está mal y por qué importa.
+      placeholder: Al guardar el formulario con un campo opcional vacío, el registro queda sin la fecha de creación.
+    validations:
+      required: true
+
+  - type: textarea
+    id: esperado
+    attributes:
+      label: Comportamiento esperado
+      description: Qué debería pasar, y con qué regla o criterio.
+      placeholder: El registro se guarda siempre con la fecha de creación del servidor.
+    validations:
+      required: true
+
+  - type: textarea
+    id: observado
+    attributes:
+      label: Comportamiento observado
+      description: Qué pasa en realidad. Con el dato concreto que viste, no la interpretación.
+      placeholder: El registro queda con la fecha en nulo y el listado lo ordena al final.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduccion
+    attributes:
+      label: Pasos de reproducción
+      description: La secuencia exacta, con datos concretos, desde un estado conocido.
+      placeholder: |
+        1. Entrar a la pantalla de registros.
+        2. Crear uno nuevo dejando el campo de notas vacío.
+        3. Guardar y volver al listado.
+        4. El registro aparece sin fecha.
+    validations:
+      required: true
+
+  # Reemplaza estas opciones por las áreas reales del repositorio: los módulos, las
+  # aplicaciones del monorepo o los frentes de trabajo con los que el equipo ya habla.
+  # Sirven para enrutar el issue, así que conviene que sean pocas y sin solapamiento.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Área o módulo
+      description: Dónde se manifiesta. Puedes marcar más de una.
+      multiple: true
+      options:
+        - Interfaz de usuario
+        - Servicios o API
+        - Datos y migraciones
+        - Autenticación y permisos
+        - Infraestructura y despliegue
+        - Documentación y configuración del repositorio
+        - Otro o por definir
+    validations:
+      required: false
+
+  - type: dropdown
+    id: severidad
+    attributes:
+      label: Severidad
+      description: El criterio es el impacto en el trabajo de quien usa el sistema, no la dificultad del arreglo.
+      options:
+        - "Alta: bloquea un flujo de trabajo o corrompe datos"
+        - "Media: degradación de uso o dato incorrecto con alternativa"
+        - "Baja: cosmético o caso de borde"
+    validations:
+      required: true
+
+  - type: input
+    id: entorno
+    attributes:
+      label: Entorno
+      description: Dónde se reprodujo. Ambiente, rama o versión, y navegador o sistema operativo si aplica.
+      placeholder: Desarrollo, rama develop, navegador de escritorio
+    validations:
+      required: false
+
+  - type: textarea
+    id: evidencia
+    attributes:
+      label: Evidencia
+      description: Capturas, logs, identificadores del registro afectado, respuesta del servicio.
+    validations:
+      required: false
