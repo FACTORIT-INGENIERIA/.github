@@ -1,0 +1,20 @@
+# Configuración del selector de plantillas de issue.
+# Va en `.github/ISSUE_TEMPLATE/config.yml`.
+
+# `true` deja disponible el issue en blanco junto a las plantillas. Es el valor que
+# acompaña al canon: las plantillas orientan, no cierran la puerta a lo que no entra
+# en ninguna de las dos. Ponerlo en `false` obliga a que todo issue nazca desde una
+# plantilla, lo que es más estricto y también válido si el repositorio lo prefiere.
+blank_issues_enabled: true
+
+# Enlaces que aparecen en el selector junto a las plantillas. Sirven para desviar a
+# otro canal lo que no debería entrar como issue de este repositorio. Descomenta y
+# reemplaza por los canales reales; si no hay ninguno, deja el bloque comentado.
+#
+# contact_links:
+#   - name: Canal del equipo
+#     url: https://ejemplo.interno/canal-del-equipo
+#     about: Consultas y dudas de uso que todavía no son un defecto ni una capacidad.
+#   - name: Reporte de seguridad
+#     url: https://ejemplo.interno/seguridad
+#     about: Vulnerabilidades y filtraciones. No se reportan como issue público.
