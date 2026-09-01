@@ -1,0 +1,89 @@
+# Formulario de capacidad. Va en `.github/ISSUE_TEMPLATE/feature.yml`.
+#
+# El `title` viene pre-poblado con el prefijo de conventional commit para que el issue
+# nazca alineado con la rama y el PR que lo van a cerrar: quien lo abre completa el
+# scope y la descripción, y de ahí sale `feat/<scope>-<descripcion>` sin traducir nada.
+#
+# `enhancement` es una etiqueta que la plataforma trae por defecto: no hace falta crearla.
+
+name: Capacidad
+description: Proponer una funcionalidad nueva o una mejora sobre una existente
+title: "feat(scope): "
+labels: ["enhancement"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Los criterios de aceptación son el campo que decide si este trabajo se puede
+        delegar. Con criterios verificables, quien lo tome (persona o agente) sabe
+        cuándo terminó; sin ellos, el alcance se negocia durante la revisión.
+
+        Si lo que traes es una definición todavía abierta, va igual acá: descríbela
+        como la pregunta que hay que resolver.
+
+  - type: textarea
+    id: problema
+    attributes:
+      label: Problema que resuelve
+      description: Qué no se puede hacer hoy, o qué cuesta de más. El problema, todavía no la solución.
+      placeholder: Para saber qué solicitudes quedaron sin respuesta hay que abrirlas una por una.
+    validations:
+      required: true
+
+  - type: textarea
+    id: propuesta
+    attributes:
+      label: Propuesta
+      description: Qué debería existir. Con el detalle suficiente para que se pueda implementar sin volver a preguntar.
+      placeholder: Un filtro en el listado que muestre solo las solicitudes sin respuesta en los últimos siete días.
+    validations:
+      required: true
+
+  - type: textarea
+    id: criterios
+    attributes:
+      label: Criterios de aceptación
+      description: Condiciones verificables que definen el trabajo terminado. Una por línea.
+      placeholder: |
+        - [ ] El listado ofrece el filtro y se puede combinar con los que ya existen.
+        - [ ] Con el filtro activo solo aparecen las solicitudes sin respuesta en siete días.
+        - [ ] El filtro sobrevive al recargar la página.
+    validations:
+      required: true
+
+  # Reemplaza estas opciones por las áreas reales del repositorio: los módulos, las
+  # aplicaciones del monorepo o los frentes de trabajo con los que el equipo ya habla.
+  # Sirven para enrutar el issue, así que conviene que sean pocas y sin solapamiento.
+  - type: dropdown
+    id: area
+    attributes:
+      label: Área o módulo
+      description: Dónde caería el cambio. Puedes marcar más de una.
+      multiple: true
+      options:
+        - Interfaz de usuario
+        - Servicios o API
+        - Datos y migraciones
+        - Autenticación y permisos
+        - Infraestructura y despliegue
+        - Documentación y configuración del repositorio
+        - Otro o por definir
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternativas
+    attributes:
+      label: Alternativas consideradas
+      description: Otros caminos que se evaluaron y por qué se descartaron. Evita que la discusión los recorra de nuevo.
+    validations:
+      required: false
+
+  - type: textarea
+    id: contexto
+    attributes:
+      label: Contexto adicional
+      description: Enlaces a issues relacionados, decisiones previas, capturas o bocetos, restricciones conocidas.
+    validations:
+      required: false
